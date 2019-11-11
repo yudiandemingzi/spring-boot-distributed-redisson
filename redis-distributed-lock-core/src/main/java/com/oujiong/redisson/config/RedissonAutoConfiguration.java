@@ -1,8 +1,8 @@
-package com.jincou.redisson.config;
+package com.oujiong.redisson.config;
 
-import com.jincou.redisson.RedissonLock;
-import com.jincou.redisson.RedissonManager;
-import com.jincou.redisson.entity.RedissonProperties;
+import com.oujiong.redisson.RedissonLock;
+import com.oujiong.redisson.RedissonManager;
+import com.oujiong.redisson.entity.RedissonProperties;
 import org.redisson.Redisson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
@@ -23,7 +22,7 @@ import org.springframework.core.annotation.Order;
 @Configuration
 @ConditionalOnClass(Redisson.class)
 @EnableConfigurationProperties(RedissonProperties.class)
-//@ComponentScan("com.jincou.redisson.annotation")
+//@ComponentScan("com.oujiong.redisson.annotation")
 public class RedissonAutoConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedissonAutoConfiguration.class);

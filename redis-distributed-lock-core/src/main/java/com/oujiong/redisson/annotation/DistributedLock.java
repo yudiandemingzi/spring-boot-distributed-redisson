@@ -1,4 +1,4 @@
-package com.jincou.redisson.annotation;
+package com.oujiong.redisson.annotation;
 
 import java.lang.annotation.*;
 

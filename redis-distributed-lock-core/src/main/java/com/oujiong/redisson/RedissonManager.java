@@ -1,14 +1,14 @@
-package com.jincou.redisson;
+package com.oujiong.redisson;
 
 import com.google.common.base.Preconditions;
 
-import com.jincou.redisson.constant.RedisConnectionType;
-import com.jincou.redisson.entity.RedissonProperties;
-import com.jincou.redisson.strategy.RedissonConfigService;
-import com.jincou.redisson.strategy.impl.ClusterConfigImpl;
-import com.jincou.redisson.strategy.impl.MasterslaveConfigImpl;
-import com.jincou.redisson.strategy.impl.SentineConfigImpl;
-import com.jincou.redisson.strategy.impl.StandaloneConfigImpl;
+import com.oujiong.redisson.constant.RedisConnectionType;
+import com.oujiong.redisson.entity.RedissonProperties;
+import com.oujiong.redisson.strategy.RedissonConfigService;
+import com.oujiong.redisson.strategy.impl.ClusterConfigImpl;
+import com.oujiong.redisson.strategy.impl.MasterslaveConfigImpl;
+import com.oujiong.redisson.strategy.impl.SentineConfigImpl;
+import com.oujiong.redisson.strategy.impl.StandaloneConfigImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.config.Config;

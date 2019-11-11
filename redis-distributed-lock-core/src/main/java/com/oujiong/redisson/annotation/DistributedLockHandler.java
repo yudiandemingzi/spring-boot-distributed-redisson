@@ -1,7 +1,7 @@
-package com.jincou.redisson.annotation;
+package com.oujiong.redisson.annotation;
 
 
-import com.jincou.redisson.RedissonLock;
+import com.oujiong.redisson.RedissonLock;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

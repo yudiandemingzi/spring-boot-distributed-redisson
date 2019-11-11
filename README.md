@@ -64,7 +64,7 @@ redis-distributed-lock-core # 核心实现
 |
 ---src
       |
-      ---com.jincou.redisson
+      ---com.oujiong.redisson
                            |# 通过注解方式 实现分布式锁
                            ---annotation
                            |# 配置类实例化RedissonLock
@@ -82,7 +82,7 @@ redis-distributed-lock-web-test # 针对上面实现类的测试类
       |
       ---java
             |
-            ---com.jincou.controller
+            ---com.oujiong.controller
                                  |# 测试 基于注解方式实现分布式锁
                                  ---AnnotatinLockController.java
                                  |# 测试 基于常规方式实现分布式锁

@@ -1,4 +1,4 @@
-package com.jincou.redisson.constant;
+package com.oujiong.redisson.constant;
 
 /**
  * @desc Redis连接方式

@@ -1,4 +1,4 @@
-package com.jincou.redisson.entity;
+package com.oujiong.redisson.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

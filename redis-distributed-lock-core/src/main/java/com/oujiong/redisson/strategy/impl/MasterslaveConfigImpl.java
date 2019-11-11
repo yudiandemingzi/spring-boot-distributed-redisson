@@ -1,9 +1,9 @@
-package com.jincou.redisson.strategy.impl;
+package com.oujiong.redisson.strategy.impl;
 
 
-import com.jincou.redisson.constant.GlobalConstant;
-import com.jincou.redisson.entity.RedissonProperties;
-import com.jincou.redisson.strategy.RedissonConfigService;
+import com.oujiong.redisson.constant.GlobalConstant;
+import com.oujiong.redisson.entity.RedissonProperties;
+import com.oujiong.redisson.strategy.RedissonConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.config.Config;

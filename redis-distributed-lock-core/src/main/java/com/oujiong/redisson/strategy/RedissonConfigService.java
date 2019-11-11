@@ -1,7 +1,7 @@
-package com.jincou.redisson.strategy;
+package com.oujiong.redisson.strategy;
 
 
-import com.jincou.redisson.entity.RedissonProperties;
+import com.oujiong.redisson.entity.RedissonProperties;
 import org.redisson.config.Config;
 
 /**

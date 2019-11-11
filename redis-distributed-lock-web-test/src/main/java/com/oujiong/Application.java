@@ -1,4 +1,4 @@
-package com.jincou;
+package com.oujiong;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
