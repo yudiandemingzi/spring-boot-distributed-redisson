@@ -94,4 +94,6 @@ redis-distributed-lock-web-test # 针对上面实现类的测试类
 
 <br>
 
+![acda64387e0896604b5932dc433c8b77](https://user-images.githubusercontent.com/37285812/142141716-5e0f0968-4109-41df-8ff8-df2eae47beff.gif)
+
 
