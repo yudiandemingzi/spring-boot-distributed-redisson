@@ -40,7 +40,7 @@ public class MasterslaveConfigImpl implements RedissonConfigService {
             //设置从节点，移除第一个节点，默认第一个为主节点
             List<String> slaveList = new ArrayList<>();
             for (String addrToken : addrTokens) {
-                slaveList.add(GlobalConstant.REDIS_CONNECTION_PREFIX.getConstant_value() + addrToken);
+                slaveList.add(GlobalConstant.REDIS_CONNECTION_PREFIX.getConstantValue() + addrToken);
             }
             slaveList.remove(0);
 
@@ -48,7 +48,6 @@ public class MasterslaveConfigImpl implements RedissonConfigService {
             log.info("初始化[主从部署]方式Config,redisAddress:" + address);
         } catch (Exception e) {
             log.error("主从部署 Redisson init error", e);
-            e.printStackTrace();
         }
         return config;
     }

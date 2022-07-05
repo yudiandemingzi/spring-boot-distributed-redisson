@@ -15,21 +15,21 @@ public enum RedisConnectionType {
     STANDALONE("standalone", "单节点部署方式"),
     SENTINEL("sentinel", "哨兵部署方式"),
     CLUSTER("cluster", "集群方式"),
-    MASTERSLAVE("masterslave", "主从部署方式");
+    MASTER_SLAVE("master_slave", "主从部署方式");
 
-    private final String connection_type;
-    private final String connection_desc;
+    private final String connectionType;
+    private final String connectionDesc;
 
-    private RedisConnectionType(String connection_type, String connection_desc) {
-        this.connection_type = connection_type;
-        this.connection_desc = connection_desc;
+    RedisConnectionType(String connectionType, String connectionDesc) {
+        this.connectionType = connectionType;
+        this.connectionDesc = connectionDesc;
     }
 
-    public String getConnection_type() {
-        return connection_type;
+    public String getConnectionType() {
+        return connectionType;
     }
 
-    public String getConnection_desc() {
-        return connection_desc;
+    public String getConnectionDesc() {
+        return connectionDesc;
     }
 }

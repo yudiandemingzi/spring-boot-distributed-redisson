@@ -40,7 +40,6 @@ public class DistributedLockHandler {
             joinPoint.proceed();
         } catch (Throwable throwable) {
             log.error("获取Redis分布式锁[异常]，加锁失败", throwable);
-            throwable.printStackTrace();
         } finally {
             //如果该线程还持有该锁，那么释放该锁。如果该线程不持有该锁，说明该线程的锁已到过期时间，自动释放锁
             if (redissonLock.isHeldByCurrentThread(lockName)) {
