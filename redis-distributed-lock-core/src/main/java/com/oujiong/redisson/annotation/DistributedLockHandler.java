@@ -28,7 +28,7 @@ public class DistributedLockHandler {
 
 
     @Around("@annotation(distributedLock)")
-    public void around(ProceedingJoinPoint joinPoint, DistributedLock distributedLock) {
+    public Object around(ProceedingJoinPoint joinPoint, DistributedLock distributedLock) throws Throwable {
         log.info("[开始]执行RedisLock环绕通知,获取Redis分布式锁开始");
         //获取锁名称
         String lockName = distributedLock.value();
@@ -37,15 +37,17 @@ public class DistributedLockHandler {
         redissonLock.lock(lockName, leaseTime);
         try {
             log.info("获取Redis分布式锁[成功]，加锁完成，开始执行业务逻辑...");
-            joinPoint.proceed();
+            return joinPoint.proceed();
         } catch (Throwable throwable) {
             log.error("获取Redis分布式锁[异常]，加锁失败", throwable);
+            throw throwable;
         } finally {
             //如果该线程还持有该锁，那么释放该锁。如果该线程不持有该锁，说明该线程的锁已到过期时间，自动释放锁
             if (redissonLock.isHeldByCurrentThread(lockName)) {
                 redissonLock.unlock(lockName);
             }
+            log.info("释放Redis分布式锁[成功]，解锁完成，结束业务逻辑...");
         }
-        log.info("释放Redis分布式锁[成功]，解锁完成，结束业务逻辑...");
+
     }
 }
