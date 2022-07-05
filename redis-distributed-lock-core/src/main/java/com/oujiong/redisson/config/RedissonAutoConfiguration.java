@@ -22,7 +22,6 @@ import org.springframework.core.annotation.Order;
 @Configuration
 @ConditionalOnClass(Redisson.class)
 @EnableConfigurationProperties(RedissonProperties.class)
-//@ComponentScan("com.oujiong.redisson.annotation")
 public class RedissonAutoConfiguration {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedissonAutoConfiguration.class);

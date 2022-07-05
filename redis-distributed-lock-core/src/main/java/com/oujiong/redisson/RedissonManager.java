@@ -37,9 +37,8 @@ public class RedissonManager {
             config = RedissonConfigFactory.getInstance().createConfig(redissonProperties);
             redisson = (Redisson) Redisson.create(config);
         } catch (Exception e) {
-            log.error("Redisson init error", e);
-            throw new IllegalArgumentException("please input correct configurations," +
-                    "connectionType must in standalone/sentinel/cluster/masterslave");
+            throw new IllegalArgumentException("Redisson init error, please input correct configurations," +
+                    "connectionType must in standalone/sentinel/cluster/masterslave", e);
         }
     }
 
@@ -84,13 +83,13 @@ public class RedissonManager {
             String connectionType = redissonProperties.getType();
             //声明配置上下文
             RedissonConfigService redissonConfigService = null;
-            if (connectionType.equals(RedisConnectionType.STANDALONE.getConnection_type())) {
+            if (RedisConnectionType.STANDALONE.getConnectionType().equals(connectionType)) {
                 redissonConfigService = new StandaloneConfigImpl();
-            } else if (connectionType.equals(RedisConnectionType.SENTINEL.getConnection_type())) {
+            } else if (RedisConnectionType.SENTINEL.getConnectionType().equals(connectionType)) {
                 redissonConfigService = new SentineConfigImpl();
-            } else if (connectionType.equals(RedisConnectionType.CLUSTER.getConnection_type())) {
+            } else if (RedisConnectionType.CLUSTER.getConnectionType().equals(connectionType)) {
                 redissonConfigService = new ClusterConfigImpl();
-            } else if (connectionType.equals(RedisConnectionType.MASTERSLAVE.getConnection_type())) {
+            } else if (RedisConnectionType.MASTER_SLAVE.getConnectionType().equals(connectionType)) {
                 redissonConfigService = new MasterslaveConfigImpl();
             } else {
                 throw new IllegalArgumentException("创建Redisson连接Config失败！当前连接方式:" + connectionType);

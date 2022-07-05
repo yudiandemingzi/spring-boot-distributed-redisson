@@ -37,12 +37,11 @@ public class SentineConfigImpl implements RedissonConfigService {
             }
             //设置sentinel节点的服务IP和端口
             for (int i = 1; i < addrTokens.length; i++) {
-                config.useSentinelServers().addSentinelAddress(GlobalConstant.REDIS_CONNECTION_PREFIX.getConstant_value() + addrTokens[i]);
+                config.useSentinelServers().addSentinelAddress(GlobalConstant.REDIS_CONNECTION_PREFIX.getConstantValue() + addrTokens[i]);
             }
             log.info("初始化[哨兵部署]方式Config,redisAddress:" + address);
         } catch (Exception e) {
             log.error("哨兵部署 Redisson init error", e);
-
         }
         return config;
     }

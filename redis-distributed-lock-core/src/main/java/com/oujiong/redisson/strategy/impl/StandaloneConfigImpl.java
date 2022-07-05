@@ -24,7 +24,7 @@ public class StandaloneConfigImpl implements RedissonConfigService {
             String address = redissonProperties.getAddress();
             String password = redissonProperties.getPassword();
             int database = redissonProperties.getDatabase();
-            String redisAddr = GlobalConstant.REDIS_CONNECTION_PREFIX.getConstant_value() + address;
+            String redisAddr = GlobalConstant.REDIS_CONNECTION_PREFIX.getConstantValue() + address;
             config.useSingleServer().setAddress(redisAddr);
             config.useSingleServer().setDatabase(database);
             //密码可以为空

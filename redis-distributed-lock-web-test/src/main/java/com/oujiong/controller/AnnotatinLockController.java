@@ -25,7 +25,7 @@ public class AnnotatinLockController {
      */
     public static volatile Integer TOTAL = 10;
 
-    @GetMapping("annotatin-lock-decrease-stock")
+    @GetMapping("/annotatin-lock-decrease-stock")
     @DistributedLock(value="goods", leaseTime=5)
     public String lockDecreaseStock() throws InterruptedException {
         if (TOTAL > 0) {
