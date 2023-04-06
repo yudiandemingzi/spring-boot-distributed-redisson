@@ -1,14 +1,9 @@
 package com.oujiong.redisson;
 
 import com.google.common.base.Preconditions;
-
-import com.oujiong.redisson.constant.RedisConnectionType;
 import com.oujiong.redisson.entity.RedissonProperties;
 import com.oujiong.redisson.strategy.RedissonConfigService;
-import com.oujiong.redisson.strategy.impl.ClusterConfigImpl;
-import com.oujiong.redisson.strategy.impl.MasterslaveConfigImpl;
-import com.oujiong.redisson.strategy.impl.SentineConfigImpl;
-import com.oujiong.redisson.strategy.impl.StandaloneConfigImpl;
+import com.oujiong.redisson.utils.SpringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.config.Config;
@@ -83,8 +78,9 @@ public class RedissonManager {
             Preconditions.checkNotNull(redissonProperties.getDatabase(), "redisson.lock.server.database cannot be NULL");
             String connectionType = redissonProperties.getType();
             //声明配置上下文
-            RedissonConfigService redissonConfigService = null;
-            if (connectionType.equals(RedisConnectionType.STANDALONE.getConnection_type())) {
+
+            RedissonConfigService redissonConfigService = SpringUtils.getBean(connectionType);
+            /*if (connectionType.equals(RedisConnectionType.STANDALONE.getConnection_type())) {
                 redissonConfigService = new StandaloneConfigImpl();
             } else if (connectionType.equals(RedisConnectionType.SENTINEL.getConnection_type())) {
                 redissonConfigService = new SentineConfigImpl();
@@ -94,7 +90,7 @@ public class RedissonManager {
                 redissonConfigService = new MasterslaveConfigImpl();
             } else {
                 throw new IllegalArgumentException("创建Redisson连接Config失败！当前连接方式:" + connectionType);
-            }
+            }*/
             return redissonConfigService.createRedissonConfig(redissonProperties);
         }
     }

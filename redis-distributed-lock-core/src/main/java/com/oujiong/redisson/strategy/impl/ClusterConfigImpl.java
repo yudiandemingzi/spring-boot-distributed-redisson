@@ -7,6 +7,7 @@ import com.oujiong.redisson.strategy.RedissonConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.config.Config;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description: 集群方式Redisson部署
@@ -18,6 +19,7 @@ import org.redisson.config.Config;
  * @date 2019/6/19 下午4:24
  */
 @Slf4j
+@Service(value = "cluster")
 public class ClusterConfigImpl implements RedissonConfigService {
 
     @Override
