@@ -7,6 +7,7 @@ import com.oujiong.redisson.strategy.RedissonConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.config.Config;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description: 单机部署Redisson配置
@@ -15,6 +16,7 @@ import org.redisson.config.Config;
  * @date 2019/6/19 下午10:04
  */
 @Slf4j
+@Service(value = "standalone")
 public class StandaloneConfigImpl implements RedissonConfigService {
 
     @Override
